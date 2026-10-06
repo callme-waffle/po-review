@@ -1,0 +1,16 @@
+PO Review baseline operations
+
+This public snapshot contains example deployment addresses and paths, not production configuration.
+Configure deployment-specific repository locations, document manifests, validation dependencies,
+authentication and remote translation endpoints before running the service.
+
+Workflow: sign in, compare source and translated documents, save validated PO edits,
+approve the reviewed document revision, preview a selected upload, explicitly confirm publication,
+and verify the remote result. Changed document revisions require renewed review.
+
+Shared translation entries may affect multiple documents. Partial remote publication may fail
+independently by component. Never interpret a failed verification as successful publication.
+
+Do not commit credentials, runtime state, generated documents, backups or operational logs.
+The baseline uses shared authentication and does not identify individual reviewers.
+User accounts, isolated Ubuntu workspaces and optional SSH/SFTP are planned in follow-up issues.
