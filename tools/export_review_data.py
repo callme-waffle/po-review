@@ -8,7 +8,7 @@ import io
 import json
 from babel.messages.pofile import read_po
 
-BASE = Path('/home/waffle/work')
+BASE = Path('/opt/po-review/work')
 RUN = BASE / 'translation-support/20261001-expansion'
 TASKS = [('openstacksdk', 'doc', 1), ('openstacksdk', 'doc-install', 0),
          ('openstacksdk', 'doc-user', 5), ('openstacksdk', 'doc-contributor', 6),
@@ -34,7 +34,7 @@ def document_names(value):
 
 def main():
     data = {'generated_at': datetime.now(ZoneInfo('Asia/Seoul')).isoformat(),
-        'server': 'waffle-ostk-i18n', 'documents': [], 'catalogs': [],
+        'server': 'review-host', 'documents': [], 'catalogs': [],
         'source_issues': [], 'term_exceptions': [], 'notes': [
         '번역 완료와 사람이 수행한 리뷰 승인은 별개입니다. 최초 리뷰 상태는 모두 미검토입니다.',
         '문서별 항목에는 공유 msgid가 중복됩니다. 문서 행의 항목 수를 합산하지 마세요. 요약의 PO별 항목 수는 고유 항목 기준입니다.',
@@ -42,7 +42,7 @@ def main():
         '조회 시점의 번역 현황입니다. 미확정 문서별 집계는 공란이며 0개라는 뜻이 아닙니다.',
         '신규 용어와 문맥별 예외는 프로젝트별로 관리하며 공식 OpenStack 한국어 용어집을 우선합니다.',
         'Weblate 용어집 일부는 HTTP 429로 미확인입니다. 조사 제한은 기존 translation-policy.json에 기록했습니다.',
-        'PO·POT·검토 로그 경로는 waffle-ostk-i18n 서버의 경로입니다. 플랫폼 업로드는 수행하지 않습니다.',
+        'PO·POT·검토 로그 경로는 review-host 서버의 경로입니다. 플랫폼 업로드는 수행하지 않습니다.',
         '리뷰 상태·검토자·검토일·메모는 재생성 시 stable_id로 기존 Excel에서 보존합니다.']}
     for project, name, priority in TASKS:
         repo = BASE/project
