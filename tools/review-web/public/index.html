@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OpenStack 번역 검토</title><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script></head>
+<body>
+<header class="top"><div><span class="eyebrow">OPENSTACK · 한국어 번역</span><h1>원문과 함께 검토하기</h1></div><a class="download" href="/translation-review-checklist.xlsx" download>Excel 체크리스트 ↓</a></header>
+<div class="stats" id="stats" aria-live="polite">문서 목록을 불러오고 있습니다…</div>
+<div class="workspace">
+<aside aria-label="문서 선택">
+<div class="filters"><label for="project">프로젝트</label><select id="project"><option value="">모든 프로젝트</option><option>openstacksdk</option><option>skyline-apiserver</option></select>
+<label for="priority">작업 범위</label><select id="priority"><option value="">기존 + 추가 번역 전체</option><option value="0">P0 · 기존 번역</option><option value="1">P1 · 공통 문서</option><option value="2">P2 · Compute / Network</option><option value="3">P3 · 주요 서비스</option><option value="4">P4 · 테스트</option><option value="5">P5 · 나머지 현행 API</option><option value="6">P6 · 기여자 안내</option><option value="7">P7 · 이전 API 버전</option><option value="8">P8 · 릴리스 노트</option></select>
+<label for="doc-search">문서 검색</label><input type="search" id="doc-search" placeholder="파일 경로, 요약, PO 이름" autocomplete="off"><p id="doc-count" class="muted"></p></div>
+<nav id="documents" aria-label="문서 목록"></nav>
+</aside>
+<main id="main"><div id="error" role="alert" hidden></div>
+<section id="doc-head"><p class="eyebrow" id="doc-project"></p><h2 id="doc-title">문서를 선택해 주세요</h2><p id="doc-summary"></p><p id="doc-path" class="path"></p><p id="po-path" class="path"></p></section>
+<div class="toolbar"><div class="search-box"><label for="entry-search">이 문서의 원문·번역문 검색</label><input type="search" id="entry-search" placeholder="영어 또는 한국어로 검색" autocomplete="off"></div><label class="check"><input type="checkbox" id="issues-only"> 원문 이슈만</label><button id="copy-link" type="button">문서 링크 복사</button></div>
+<p class="hint">원문과 번역문의 RST 표기를 그대로 비교합니다. 검토 상태와 메모는 Excel 체크리스트에 기록해 주세요.</p>
+<div class="entry-nav"><span id="entry-count" aria-live="polite"></span><div><button id="prev" type="button">이전</button><span id="page-count"></span><button id="next" type="button">다음</button></div></div>
+<div class="column-head" aria-hidden="true"><span>영어 원문</span><span>한국어 번역</span></div><div id="entries"></div>
+<div class="bottom-nav"><button id="prev-doc" type="button">← 이전 문서</button><button id="next-doc" type="button">다음 문서 →</button></div>
+</main></div><footer>review-host · 서버에 저장된 번역본 비교 · <span id="updated"></span></footer>
+</body></html>
