@@ -7,7 +7,7 @@ import hashlib
 import json
 from babel.messages.pofile import read_po
 
-BASE=Path('/home/waffle/work')
+BASE=Path('/opt/po-review/work')
 RUN=BASE/'translation-support/20261001-expansion'
 
 def read(path):
